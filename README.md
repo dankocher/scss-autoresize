@@ -38,6 +38,9 @@ Copy it to your project
 }
 ```
 ##Parameters
+```scss
+ autoResize($minSize, $maxSize, $minWidthPx, $maxWidthPx, $pixelsPerRem)
+ ```
 
 | Header              | Required | Default value       | Description             |
 | ------------------- | -------- | ------------------- | ----------------------- |

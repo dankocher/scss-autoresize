@@ -12,18 +12,18 @@ padding
 
 ```
 Function `autoResize` return `clamp`
-##Usage
-###Step 1: Copy file <i>autoResize.scss</i> to your project
+## Usage
+### Step 1: Copy file <i>autoResize.scss</i> to your project
 The file is located at path <i>/src/styles/autoresize.scss</i>
 <br>
 Copy it to your project
 
-###Step 2: Import file to your scss file
+### Step 2: Import file to your scss file
 ```scss
 @import "./styles/autoResize";
 ```
 
-###Step 3: Use function autoResize
+### Step 3: Use function autoResize
 
 ```scss
 .className {
@@ -37,7 +37,7 @@ Copy it to your project
   
 }
 ```
-##Parameters
+## Parameters
 ```scss
  autoResize($minSize, $maxSize, $minWidthPx, $maxWidthPx, $pixelsPerRem)
  ```

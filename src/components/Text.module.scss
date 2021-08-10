@@ -1,0 +1,10 @@
+@import "../styles/autoResize";
+
+
+.Text {
+  //font-size: autoResize(10, 100);
+  //font-size: clamp(0.625rem, calc(-1.7857142857142856rem + 10.714285714285714vw), 6.25rem);
+  font-size: autoResize(10, 100, 360, 1200);
+  width: autoResize(100, 1000, 360, 1200);
+  background-color: #61dafb;
+}

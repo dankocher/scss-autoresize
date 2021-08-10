@@ -1,0 +1,19 @@
+
+@function autoResize($minSize, $maxSize: $minSize, $minWidthPx: 360, $maxWidthPx: 840, $pixelsPerRem: 16) {
+
+  $minWidth: $minWidthPx / $pixelsPerRem;
+  $maxWidth: $maxWidthPx / $pixelsPerRem;
+
+  $rMinSize: ($minSize / $pixelsPerRem);
+  $rMaxSize: ($maxSize / $pixelsPerRem);
+
+  $slope: ($rMaxSize - $rMinSize) / ($maxWidth - $minWidth);
+  $yAxisIntersection: -$minWidth * $slope + $rMinSize;
+
+  $remMinSize: $rMinSize + rem;
+  $remMaxSize: $rMaxSize + rem;
+  $vwSlope: ($slope * 100) + vw;
+  $remyAxisIntersection: $yAxisIntersection + rem;
+  $calc: calc(#{$remyAxisIntersection} + #{$vwSlope});
+  @return clamp(#{$remMinSize}, #{$calc}, #{$remMaxSize});
+}

@@ -1,5 +1,11 @@
 
-@function autoResize($minSize, $maxSize: $minSize, $minWidthPx: 360, $maxWidthPx: 840, $pixelsPerRem: 16) {
+@function autoResize($minSize, $maxSize: $minSize, $minWidthPx: 360px, $maxWidthPx: 960px, $pixelsPerRem: 16px) {
+
+  $minSize: strip-unit($minSize);
+  $maxSize: strip-unit($maxSize);
+  $minWidthPx: strip-unit($minWidthPx);
+  $maxWidthPx: strip-unit($maxWidthPx);
+  $pixelsPerRem: strip-unit($pixelsPerRem);
 
   $minWidth: $minWidthPx / $pixelsPerRem;
   $maxWidth: $maxWidthPx / $pixelsPerRem;
@@ -16,4 +22,12 @@
   $remyAxisIntersection: $yAxisIntersection + rem;
   $calc: calc(#{$remyAxisIntersection} + #{$vwSlope});
   @return clamp(#{$remMinSize}, #{$calc}, #{$remMaxSize});
+}
+
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
 }
